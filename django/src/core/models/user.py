@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries.fields import CountryField
 from core.models import BaseModel
 
 class User(BaseModel):
@@ -9,7 +10,4 @@ class User(BaseModel):
     description = models.TextField(verbose_name='Description')
     website = models.CharField(max_length=128, verbose_name='Website')
     active = models.BooleanField(default=False, verbose_name='Active')
-
-    # country
-    # website
-    # active
+    country = CountryField(blank=True)
