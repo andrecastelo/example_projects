@@ -1,2 +1,3 @@
 pyenv
 .env
+*.sqlite3
