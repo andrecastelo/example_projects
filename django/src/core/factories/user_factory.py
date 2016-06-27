@@ -11,7 +11,7 @@ class UserFactory(factory.DjangoModelFactory):
     class Meta:
         model = User
 
-    full_name = factory.LazyAttribute(lambda x: faker.name())
+    name = factory.LazyAttribute(lambda x: faker.name())
     username = factory.LazyAttribute(lambda x: faker.user_name())
     password = '123456'
     email = factory.LazyAttribute(lambda x: faker.email())
