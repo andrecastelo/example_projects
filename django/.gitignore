@@ -1,4 +1,5 @@
 pyenv
 .env
+.idea
 *.sqlite3
 *.pyc
