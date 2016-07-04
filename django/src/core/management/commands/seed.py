@@ -22,7 +22,7 @@ class Command(BaseCommand):
             password=default_password,
             description="Developer of this app",
             website="http://andrecastelo.github.io",
-            active=True,
+            is_active=True,
             country="BR"
         )
 

@@ -17,7 +17,7 @@ class UserFactory(factory.DjangoModelFactory):
     email = factory.LazyAttribute(lambda x: faker.email())
     description = factory.LazyAttribute(lambda x: faker.sentence(nb_words=6))
     website = factory.LazyAttribute(lambda x: faker.uri())
-    active = factory.LazyAttribute(lambda x: faker.pybool())
+    is_active = factory.LazyAttribute(lambda x: faker.pybool())
     country = factory.LazyAttribute(lambda x: faker.country_code())
 
     # nome = Sequence(lambda n: 'alunoanexo%d' % n)
