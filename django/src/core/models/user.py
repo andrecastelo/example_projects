@@ -8,15 +8,16 @@ from core.models import BaseModel
 
 
 class User(AbstractBaseUser, PermissionsMixin, BaseModel):
+    # My custom fields
     name = models.CharField(max_length=250, blank=False, verbose_name='Name')
     username = models.CharField(max_length=30, unique=True, verbose_name='Username')
     email = models.CharField(max_length=128, unique=True, verbose_name='Email')
     description = models.TextField(verbose_name='Description')
     website = models.CharField(max_length=128, verbose_name='Website')
-    is_active = models.BooleanField(default=False, verbose_name='Active')
     country = CountryField(blank=True)
-    date_joined = models.DateTimeField('Date joined', default=timezone.now)
 
+    # Fields needed by AbstractBaseUser
+    date_joined = models.DateTimeField('Date joined', default=timezone.now)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -41,6 +42,3 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
 
     def get_short_name(self):
         return self.name
-
-    # def email_user(self, subject, message, from_email=None):
-        # send_mail(subject, message, from_email, [self.email])
