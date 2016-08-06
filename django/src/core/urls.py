@@ -7,6 +7,8 @@ from core import views
 urlpatterns = [
     url(r'^users$', views.UserList.as_view()),
     url(r'^users/(?P<pk>[0-9]+)$', views.UserDetail.as_view()),
+    url(r'^tweets$', views.TweetList.as_view()),
+    url(r'^tweets/(?P<pk>[0-9]+)$', views.TweetDetail.as_view()),
     url(r'^login', rest_views.obtain_auth_token)
 ]
 
